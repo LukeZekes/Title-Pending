@@ -30,7 +30,7 @@ public class PlayerMovement_Controller : MonoBehaviour {
     private void FixedUpdate()
     {
         ///Horizontal Movement
-        if (Input.GetAxis("Horizontal(Controller)") == 1)
+        if (Input.GetAxisRaw("Horizontal(Controller)") == 1)
         {
             if (player.velocity.x < 0)
             {
@@ -43,7 +43,7 @@ public class PlayerMovement_Controller : MonoBehaviour {
             Debug.Log("d");
 
         }
-        else if (Input.GetAxis("Horizontal(Controller)") == -1)
+        else if (Input.GetAxisRaw("Horizontal(Controller)") == -1)
         {
             if (player.velocity.x > 0)
             {
@@ -54,12 +54,9 @@ public class PlayerMovement_Controller : MonoBehaviour {
                 player.AddForce(-speed * Time.deltaTime, 0, 0);
             }
         }
-        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            player.velocity = new Vector3(0, player.velocity.y, 0);
-        }
+       
         ///Vertical Movement
-        if (Input.GetKey(KeyCode.UpArrow) && count > 10)
+        if (Input.GetAxisRaw("Vertical(Controller)") == 1 && count > 10)
         {
             Debug.Log(count);
             player.AddForce(0, jumpingSpeed, 0);
