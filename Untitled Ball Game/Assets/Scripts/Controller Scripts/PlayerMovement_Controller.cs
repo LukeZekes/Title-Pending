@@ -40,6 +40,7 @@ public class PlayerMovement_Controller : MonoBehaviour {
             {
                 player.AddForce(speed * Time.deltaTime, 0, 0);
             }
+            Debug.Log("d");
 
         }
         else if (Input.GetAxis("Horizontal(Controller)") == -1)
@@ -53,8 +54,12 @@ public class PlayerMovement_Controller : MonoBehaviour {
                 player.AddForce(-speed * Time.deltaTime, 0, 0);
             }
         }
+        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            player.velocity = new Vector3(0, player.velocity.y, 0);
+        }
         ///Vertical Movement
-        if (Input.GetAxis("Vertical(Controller)") == -1 && count > 10)
+        if (Input.GetKey(KeyCode.UpArrow) && count > 10)
         {
             Debug.Log(count);
             player.AddForce(0, jumpingSpeed, 0);

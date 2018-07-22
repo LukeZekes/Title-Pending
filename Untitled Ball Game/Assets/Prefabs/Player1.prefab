@@ -308,7 +308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   self: {fileID: 1804742717974798}
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 88ff9168ce290a746931272f14401d52, type: 2}
+  - {fileID: 2100000, guid: 1dab312b5d7b9914b8b71bdabbfe96b0, type: 2}
 --- !u!114 &114343567210519108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   cube: {fileID: 4427525509569884}
+  aim: {fileID: 0}
 --- !u!114 &114824750772907550
 MonoBehaviour:
   m_ObjectHideFlags: 1
